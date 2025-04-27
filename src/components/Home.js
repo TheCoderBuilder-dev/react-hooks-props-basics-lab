@@ -1,13 +1,20 @@
 import React from "react";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import About from "./About";
 
-function Home(props) {
+// Import user data
+import user from "../data/user";
+console.log(user);
+
+function App() {
   return (
-    <div id="home">
-      <h1 style={{ color: props.color }}>
-        {props.name} is a Web Developer from {props.city}
-      </h1>
+    <div>
+      <NavBar />
+      <Home name={user.name} city={user.city} color={user.color} />  {/* Pass name, city, and color to Home */}
+      <About bio={user.bio} github={user.github} linkedin={user.linkedin} />  {/* Pass bio, github, and linkedin to About */}
     </div>
   );
 }
 
-export default Home;
+export default App;
